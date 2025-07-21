@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engenharia de Requisitos – Aula 01</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    section {
+      display: none;
+      padding: 60px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    section.active {
+      display: block;
+    }
+    h1, h2 {
+      color: #ffd700;
+    }
+    ul, ol {
+      margin-top: 1em;
+      padding-left: 1.5em;
+    }
+    .nav {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #999;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slides -->
+<section class="active">
+  <h1>Engenharia de Requisitos</h1>
+  <p><strong>1ª Aula – Introdução à Engenharia de Software e Regras de Negócio</strong></p>
+  <p>Professor: Edvaldo Rodrigues<br>Curso: ADS – 2º Período | 2025/2<br>Horário: Terças, 19h às 22h40 | Lab 4</p>
+</section>
+
+<section>
+  <h2>👨‍🏫 Quem é o Professor?</h2>
+  <ul>
+    <li><strong>Nome:</strong> Edvaldo Rodrigues</li>
+    <li><strong>Formação:</strong> Especialista em Inovação e Desenvolvimento de Software</li>
+    <li><strong>Atuação:</strong> Professor, Empreendedor, Colunista de Tecnologia</li>
+    <li><strong>Empresa:</strong> Fundador da Edronet (sites, inovação e conteúdo)</li>
+    <li><strong>Projetos:</strong> Criador do programa <em>edvaldo.tech</em> e colunista do jornal Folha de Cianorte</li>
+    <li><strong>Experiência:</strong> +20 anos em TI, Comunicação e Educação</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Plano de Ensino</h2>
+  <ul>
+    <li><strong>Carga horária:</strong> 80h (40h teóricas + 40h práticas)</li>
+    <li><strong>Provas:</strong> B1 até 22/09 | B2 até 24/11</li>
+    <li><strong>Avaliações:</strong>
+      <ul>
+        <li>Trabalho 1: Levantamento de requisitos e regras</li>
+        <li>Trabalho 2: Protótipo com regras validadas</li>
+        <li>Provas B1 e B2: raciocínio prático e modelagem</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>O que é Engenharia de Software?</h2>
+  <ul>
+    <li>Disciplina da computação que trata do desenvolvimento sistemático de software.</li>
+    <li>Vai além da programação: envolve requisitos, projeto, testes, manutenção.</li>
+    <li>Foco em qualidade, custo, prazo e satisfação do cliente.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Engenharia x Programação</h2>
+  <ul>
+    <li><strong>Programação:</strong> implementação de soluções.</li>
+    <li><strong>Engenharia de Software:</strong> envolve planejamento, levantamento de requisitos, arquitetura, validação.</li>
+    <li>Sem engenharia: alto risco de falhas, retrabalho e desperdício.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ciclo de Vida do Software</h2>
+  <ul>
+    <li>Modelos de desenvolvimento (cascata, ágil, espiral...)</li>
+    <li>Fases típicas: levantamento, análise, projeto, implementação, testes, manutenção.</li>
+    <li>Regras de negócio devem ser capturadas desde o início.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Regras de Negócio</h2>
+  <ul>
+    <li>São diretrizes que determinam como um sistema deve se comportar conforme o negócio.</li>
+    <li>Exemplo: "Um cliente pode realizar no máximo 3 reservas simultâneas."</li>
+    <li>Regras mal definidas causam falhas críticas.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Estudo de Casos Reais</h2>
+  <ul>
+    <li>Falha no sistema de emissão de passagens (empresa aérea).</li>
+    <li>Erro em cálculo de limite de crédito no e-commerce.</li>
+    <li>Ausência de validações que causaram prejuízo e imagem negativa.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Atividade Diagnóstica</h2>
+  <p><strong>Em grupos:</strong></p>
+  <ol>
+    <li>Escolha um dos casos de falha apresentados.</li>
+    <li>Liste 3 regras de negócio que poderiam evitar o problema.</li>
+    <li>Explique o impacto da ausência de cada regra.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Para a próxima aula</h2>
+  <ul>
+    <li>Leitura: modelos de ciclo de vida de software (Pressman ou Sommerville).</li>
+    <li>Prepare-se para identificar <strong>momentos críticos</strong> para capturar regras de negócio.</li>
+    <li>Atividade bônus: documento com reflexão sobre os casos de falha (0,5 pt extra).</li>
+  </ul>
+</section>
+
+<div class="nav">Use ← → para navegar entre os slides</div>
+
+<script>
+  const slides = document.querySelectorAll('section');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    } else if (e.key === 'ArrowLeft') {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  });
+</script>
+
+</body>
+</html>
